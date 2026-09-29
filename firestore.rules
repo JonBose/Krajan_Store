@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Vendor Registrations: siapa pun dapat mendaftar (create), membaca status pengajuan
+    match /vendor_registrations/{registrationId} {
+      allow read, create: if true;
+      allow update, delete: if true;
+    }
+
+    // Orders: pemesanan online pelanggan
+    match /orders/{orderId} {
+      allow read, create: if true;
+      allow update, delete: if true;
+    }
+
+    // Customers / Member
+    match /customers/{customerId} {
+      allow read, create: if true;
+      allow update, delete: if true;
+    }
+
+    // Produk & data umum
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

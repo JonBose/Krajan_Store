@@ -1,0 +1,6 @@
+{
+  "name": "KRAJAN STORE & POS KDMP",
+  "description": "Marketplace belanja sembako murah & produk UMKM Dapur Krajan terintegrasi sistem kasir outlet KDMP Pekalongan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

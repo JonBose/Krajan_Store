@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "vendor_registrations": {
+      "title": "Vendor Registrations",
+      "description": "Pendaftaran calon mitra UMKM & supplier Krajan Store",
+      "type": "object",
+      "properties": {
+        "ownerName": { "type": "string" },
+        "storeName": { "type": "string" },
+        "category": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "productDescription": { "type": "string" },
+        "vendorCode": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "reviewed", "approved", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ownerName", "storeName", "phone"]
+    },
+    "orders": {
+      "title": "Orders",
+      "description": "Transaksi pemesanan online Krajan Store",
+      "type": "object",
+      "properties": {
+        "invoice": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "address": { "type": "string" },
+        "deliveryType": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["invoice", "grandTotal"]
+    },
+    "customers": {
+      "title": "Customers",
+      "description": "Data pelanggan dan member terdaftar Krajan Store",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "memberCode": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "phone"]
+    }
+  }
+}
